@@ -108,7 +108,7 @@ The above shows that NA's are only within the `ActivityData$steps` and we have a
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-So keeping it simple will just put the average per day into the NAs, reading the forums came across this  
+So keeping it simple will just put the average per interval into the NAs, reading the forums came across this  
 bit of code, we can use the data we created earlier `FiveMin` to get the means we want.
 ```{r, results='hide'}
 set1 <- c(1, NA, 3, NA, 5)
@@ -203,3 +203,4 @@ library(lattice)
 xyplot(steps ~ interval | day, data = dayofweek, layout = c(1, 2), ylab = "number of steps", type = "l")
 ```
 
+The data shows that in general there is more activity on the weekend. This would make sense with a common office worker like me sitting at my computer. It also seems to indicate that people are walking a lot in the morning, this is probably due to walking to work but there should generally be a similar spike for going home however this is not the case. From my guess it would be people waking up and taking dogs for walks or morning exercise. 
